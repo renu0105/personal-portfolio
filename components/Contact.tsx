@@ -37,8 +37,12 @@ const Contact = () => {
       } else {
         alert("Failed to send message.");
       }
-    } catch (error) {
-      console.error("Email error:", error);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error("Email error:", error.message);
+      } else {
+        console.error("Unknown error:", error);
+      }
       alert("Something went wrong while sending your message.");
     }
   };
