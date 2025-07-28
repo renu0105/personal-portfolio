@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Skills = () => {
   return (
-    <section id="skills">
+    <section className="pt-20 min-h-screen scroll-mt-28">
       <Card>
         <CardHeader className="text-center text-3xl font-serif">
           Explore the tools

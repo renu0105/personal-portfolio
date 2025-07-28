@@ -1,10 +1,21 @@
+"use client";
 import { Choose } from "@/lib/data";
-import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "./ui/button";
 
 function About() {
+  const [loading, setLoading] = useState(false);
+
+  const handleDownload = () => {
+    setLoading(true);
+    setTimeout(() => {
+      window.open("/Renu_Resume.pdf");
+      setLoading(false);
+    }, 2000);
+  };
+
   return (
-    <section>
+    <section className="pt-20 min-h-screen scroll-mt-28">
       <div className="flex lg:flex-row flex-col text-lg flex-wrap">
         <div className="border-1 border-[#956549] md:rounded-bl-3xl  lg:rounded-tl-3xl p-8 lg:w-[50%] w-fit mx-auto">
           <h1 className="text-4xl font-bold text-[#956549] mb-8">About Me</h1>
@@ -24,18 +35,25 @@ function About() {
             meaningful projects that solve real-world problems.
           </p>
           <div className="flex flex-row gap-8 mt-10">
-            <a
-              href="/Renu_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button
+              className="text-white hover:border hover:border-[#956549] hover:bg-white font-bold rounded-3xl w-52 p-7 hover:text-[#956549] transition-colors duration-500 hover:cursor-pointer bg-[#956549] text-lg"
+              onClick={handleDownload}
             >
-              <button className="text-[#956549] border border-[#956549] font-bold rounded-3xl w-44 p-3 hover:bg-[#956549] hover:text-white transition-colors duration-300 hover:cursor-pointer">
-                Download CV
-              </button>
-            </a>
-            <button className="text-[#956549] border border-[#956549] font-bold rounded-3xl w-44 p-3 hover:bg-[#956549] hover:text-white transition-colors duration-300">
-              <Link href="/projects">View Projects</Link>
-            </button>
+              Download CV
+            </Button>
+            <Button
+              className="bg-white p-7 text-[#956549] border border-[#956549] font-bold rounded-3xl w-52 hover:bg-[#956549] hover:text-white transition-colors duration-500 hover:cursor-pointer text-lg"
+              onClick={() => {
+                setLoading(true);
+                setTimeout(() => {
+                  window.location.href = "/project";
+                  setLoading(false); // optional reset if needed
+                }, 1000);
+              }}
+              disabled={loading}
+            >
+              {loading ? "Loading..." : "View Projects"}
+            </Button>
           </div>
         </div>
 

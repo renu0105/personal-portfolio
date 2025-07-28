@@ -1,20 +1,21 @@
 "use client";
 import { data } from "@/lib/data";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Projects() {
+  const [loading, setLoading] = useState(false);
   return (
-    <section className="min-h-screen">
-      <div className="flex lg:flex-row flex-col lg:justify-between w-full items-center">
-        <h1 className="font-serif text-3xl font-bold text-[#956549]/80 ">
+    <section className="pt-20 min-h-screen scroll-mt-28">
+      <div className="flex lg:flex-row flex-col lg:justify-between w-full items-center mb-8">
+        <h1 className="font-serif text-3xl font-bold text-[#956549]/80">
           Projects
         </h1>
         <Link href="/project">
-          <Button className="bg-[#956549] w-44 rounded-2xl my-4">
+          <Button className="bg-[#956549] w-44 rounded-3xl my-4 p-6">
             View all
           </Button>
         </Link>
@@ -42,8 +43,18 @@ export default function Projects() {
               <p className="text-xl font-bold">{data.title}</p>
               <p className="h-28">{data.description}</p>
               <a href={data.url}>
-                <Button className="bg-[#956549] w-full lg:w-44 p-6 lg:rounded-2xl rounded">
-                  View Project
+                <Button
+                  className="bg-[#956549] w-full lg:w-44 p-6 lg:rounded-2xl rounded"
+                  onClick={() => {
+                    setLoading(true);
+                    setTimeout(() => {
+                      window.location.href = "/project";
+                      setLoading(false);
+                    }, 1000);
+                  }}
+                  disabled={loading}
+                >
+                  {loading ? "Loading..." : " View Project"}
                 </Button>
               </a>
             </div>

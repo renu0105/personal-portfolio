@@ -10,6 +10,7 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(false);
 
   const itemVariant = {
     open: {
@@ -88,7 +89,6 @@ const Navbar = () => {
   return (
     <>
       <div className="lg:hidden text-white">
-       
         <MenuToggle toggle={() => setSidebarOpen(!sidebarOpen)} />
         <motion.nav
           initial={false}
@@ -183,8 +183,18 @@ const Navbar = () => {
               {link.title}
             </a>
           ))}
-          <Button className="bg-[#D9AB91] p-5 w-44">
-            <a href="mailto:renuu157@gmail.com">Let's Talk</a>
+          <Button
+            className="bg-[#dda381] hover:bg-[#d29b7b] disabled:opacity-100 p-5 w-44"
+            onClick={() => {
+              setLoading(true);
+              setTimeout(() => {
+                window.location.href = "mailto:renuu157@gmail.com";
+                setLoading(false); // optional reset if needed
+              }, 1000);
+            }}
+            disabled={loading}
+          >
+            {loading ? "Loading..." : "Let's Talk"}
           </Button>
         </div>
       </div>

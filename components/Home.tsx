@@ -2,7 +2,7 @@
 
 import { animate, stagger } from "motion";
 import { splitText } from "motion-plus";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { InstagramIcon, LucideLinkedin, Twitter } from "lucide-react";
 import Image from "next/image";
@@ -10,6 +10,7 @@ import { Button } from "./ui/button";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     document.fonts.ready.then(() => {
@@ -67,8 +68,18 @@ export default function Home() {
           </p>
 
           <div className="flex md:flex-row flex-col md:items-center md:gap-8 gap-4 md:mt-9 mt-4">
-            <Button className="bg-[#D9AB91] rounded-4xl w-52 p-8 text-xl font-semibold text-white text-center">
-              <a href="mailto:renuu157@gmail.com">Get in touch</a>
+            <Button
+              onClick={() => {
+                setLoading(true);
+                setTimeout(() => {
+                  window.location.href = "mailto:renuu157@gmail.com";
+                  setLoading(false); // optional reset if needed
+                }, 1000);
+              }}
+              disabled={loading}
+              className="hover:bg-[#d29b7b] disabled:opacity-100 rounded-4xl w-52 p-8 text-xl font-semibold text-white text-center bg-[#dda381] "
+            >
+              {loading ? "Loading..." : "Get in touch"}
             </Button>
 
             <div className="flex flex-row gap-6 md:mt-0 mt-4">
