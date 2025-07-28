@@ -32,8 +32,13 @@ export async function POST(req: NextRequest) {
     console.log("Mail sent:", info);
 
     return NextResponse.json({ success: true }, { status: 200 });
-  } catch (err: any) {
-    console.error("❌ API Error:", err.message, err.stack);
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      console.error("❌ API Error:", err.message, err.stack);
+    } else {
+      console.error("❌ Unknown error:", err);
+    }
+
     return NextResponse.json(
       { error: "Failed to send email" },
       { status: 500 }
