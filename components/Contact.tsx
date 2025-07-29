@@ -1,13 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Card } from "./ui/card";
-import {
-  InstagramIcon,
-  LucideLinkedin,
-  Mail,
-  Phone,
-  Twitter,
-} from "lucide-react";
+import { InstagramIcon, LucideLinkedin, Mail, Twitter } from "lucide-react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
@@ -54,11 +48,6 @@ const Contact = () => {
           <p className="text-xl">
             Interested in working together ? Fill out the Project inquiry form
           </p>
-
-          <div className="flex flex-row gap-4 items-center bg-[#956549] p-8 rounded-2xl lg:w-full w-[50%] text-white">
-            <Phone className="h-6 w-6" />
-            <p> (805)-1234567</p>
-          </div>
           <div className="flex flex-row gap-4 items-center bg-[#956549]  p-8 rounded-2xl lg:w-full w-[50%] text-white">
             <Mail className="h-6 w-6" />
             <p>renuu157@gmail.com</p>

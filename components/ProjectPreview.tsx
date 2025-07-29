@@ -4,15 +4,10 @@ import React, { useState } from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function Projects() {
   const [loading, setLoading] = useState(false);
   const [loadingIndex, setLoadingIndex] = useState<number | null>(null);
-
-  const MotionDiv = motion.div as React.ComponentType<
-    React.HTMLAttributes<HTMLDivElement> & { whileHover?: any }
-  >;
 
   return (
     <section className="pt-20 min-h-screen scroll-mt-28">
@@ -37,7 +32,7 @@ export default function Projects() {
 
       <div className="flex flex-col gap-5">
         {data.slice(0, 3).map((data, index) => (
-          <MotionDiv
+          <motion.div
             key={index}
             whileHover={{
               scale: 1.05,
@@ -70,7 +65,7 @@ export default function Projects() {
                 {loadingIndex === index ? "Loading..." : " View Project"}
               </Button>
             </div>
-          </MotionDiv>
+          </motion.div>
         ))}
       </div>
     </section>
