@@ -60,7 +60,7 @@ export default function Projects() {
                     setLoadingIndex(null);
                   }, 1000);
                 }}
-                disabled={loading}
+                disabled={loadingIndex != null}
               >
                 {loadingIndex === index ? "Loading..." : " View Project"}
               </Button>
