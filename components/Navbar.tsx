@@ -141,10 +141,10 @@ const Navbar = () => {
                 variants={itemVariant}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setSidebarOpen(false)}
               >
                 <Link
                   href={link.url}
+                  onClick={() => setSidebarOpen(false)} // ✅ Move here
                   className="flex items-center gap-2 text-[#D9AB91]"
                 >
                   {link.icon && typeof link.icon === "function" ? (

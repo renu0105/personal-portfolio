@@ -38,7 +38,7 @@ const Services = () => {
                   alt={service.title}
                   width={300}
                   height={300}
-                  className="text-center w-full h-80 rounded-2xl object-center"
+                  className="text-center w-full lg:h-80 h-60 rounded-2xl object-center"
                 />
                 <div className="flex flex-row gap-2 items-center">
                   <service.icon size={32} className="text-[#956549]" />

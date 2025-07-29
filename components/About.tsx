@@ -36,13 +36,13 @@ function About() {
           </p>
           <div className="flex flex-row gap-8 mt-10">
             <Button
-              className="text-white hover:border hover:border-[#956549] hover:bg-white font-bold rounded-3xl w-52 p-7 hover:text-[#956549] transition-colors duration-500 hover:cursor-pointer bg-[#956549] text-lg"
+              className="text-white hover:border hover:border-[#956549] hover:bg-white font-bold rounded-3xl w-52 p-7 hover:text-[#956549] transition-colors duration-700 hover:cursor-pointer bg-[#956549] text-lg"
               onClick={handleDownload}
             >
               Download CV
             </Button>
             <Button
-              className="bg-white p-7 text-[#956549] border border-[#956549] font-bold rounded-3xl w-52 hover:bg-[#956549] hover:text-white transition-colors duration-500 hover:cursor-pointer text-lg"
+              className="bg-white p-7 text-[#956549] border border-[#956549] font-bold rounded-3xl w-52 hover:bg-[#956549] hover:text-white transition-colors duration-700 hover:cursor-pointer text-lg"
               onClick={() => {
                 setLoading(true);
                 setTimeout(() => {
