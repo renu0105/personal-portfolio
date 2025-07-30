@@ -32,7 +32,7 @@ const Services = () => {
               key={index}
               className="snap-start shrink-0 basis-full sm:basis-1/2 lg:basis-1/3 px-2"
             >
-              <div className="bg-[#D5BFA3] border border-[#956549] p-6 space-y-4 h-full rounded-xl shadow-md mx-auto md:w-full w-[92%]">
+              <div className="bg-[#D5BFA3] border border-[#956549] p-6 space-y-4 h-full rounded-xl shadow-md mx-auto md:w-full w-[92%] lg:w-[95%]">
                 <Image
                   src={service.image}
                   alt={service.title}
