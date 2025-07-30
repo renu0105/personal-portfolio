@@ -4,22 +4,25 @@ import React, { useState } from "react";
 import { Button } from "./ui/button";
 
 function About() {
-  const [loading, setLoading] = useState(false);
+  const [projectLoading, setProjectLoading] = useState(false);
+  const [cvLoading, setCvLoading] = useState(false);
 
   const handleDownload = () => {
-    setLoading(true);
+    setCvLoading(true);
     setTimeout(() => {
       window.open("/Renu_Resume.pdf");
-      setLoading(false);
+      setCvLoading(false);
     }, 2000);
   };
 
   return (
-    <section className="pt-20 min-h-screen scroll-mt-28">
+    <section className="pt-20 min-h-screen scroll-mt-28 mx-auto">
       <div className="flex lg:flex-row flex-col text-lg flex-wrap">
-        <div className="border-1 border-[#956549] md:rounded-bl-3xl  lg:rounded-tl-3xl p-8 lg:w-[50%] w-fit mx-auto">
-          <h1 className="text-4xl font-bold text-[#956549] mb-8">About Me</h1>
-          <p className="text-xl ">
+        <div className="border-1 border-[#956549] lg:rounded-bl-3xl  lg:rounded-tl-3xl p-8 lg:w-[50%] mx-auto">
+          <h1 className="md:text-4xl text-2xl font-bold text-[rgb(149,101,73)] mb-8">
+            About Me
+          </h1>
+          <p className="md:text-xl text-sm ">
             Hi, I’m Renu — a passionate Front-End Developer with a strong
             foundation in modern web development technologies. I specialize in
             creating beautiful, responsive, and performance-driven user
@@ -34,31 +37,33 @@ function About() {
             goal is to keep growing as a full-stack developer and contribute to
             meaningful projects that solve real-world problems.
           </p>
-          <div className="flex flex-row gap-8 mt-10">
+          <div className="flex lg:flex-row flex-col gap-8 mt-10">
             <Button
-              className="text-white hover:border hover:border-[#956549] hover:bg-white font-bold rounded-3xl w-52 p-7 hover:text-[#956549] transition-colors duration-700 hover:cursor-pointer bg-[#956549] text-lg"
+              className="text-white hover:border hover:border-[#956549] hover:bg-white font-bold rounded-3xl md:w-52 w-full md:p-7 p-6 hover:text-[#956549] transition-colors duration-700 hover:cursor-pointer bg-[#956549] md:text-lg text-sm "
               onClick={handleDownload}
             >
-              Download CV
+              {cvLoading ? "Loading..." : "Download CV"}
             </Button>
             <Button
-              className="bg-white p-7 text-[#956549] border border-[#956549] font-bold rounded-3xl w-52 hover:bg-[#956549] hover:text-white transition-colors duration-700 hover:cursor-pointer text-lg"
+              className="bg-white md:p-7 p-6 text-[#956549] border border-[#956549] font-bold rounded-3xl md:w-52 w-full hover:bg-[#956549] hover:text-white transition-colors duration-700 hover:cursor-pointer md:text-lg text-sm"
               onClick={() => {
-                setLoading(true);
+                setProjectLoading(true);
                 setTimeout(() => {
                   window.location.href = "/project";
-                  setLoading(false); // optional reset if needed
+                  setProjectLoading(false); // optional reset if needed
                 }, 1000);
               }}
-              disabled={loading}
+              disabled={projectLoading}
             >
-              {loading ? "Loading..." : "View Projects"}
+              {projectLoading ? "Loading..." : "View Projects"}
             </Button>
           </div>
         </div>
 
-        <div className="flex flex-col justify-center gap-6 text-black p-8 border-1 border-[#956549] lg:w-[50%] sm:w-full font-sans lg:rounded-br-3xl lg:rounded-tr-3xl">
-          <h1 className="text-[#956549] font-bold text-3xl">Why Choose us ?</h1>
+        <div className="flex flex-col justify-center gap-6 text-black p-8 border-1 border-[#956549] lg:w-[50%] sm:w-full font-sans lg:rounded-br-3xl lg:rounded-tr-3xl text-sm md:text-lg">
+          <h1 className="text-[#956549] font-bold md:text-3xl text-2xl">
+            Why Choose us ?
+          </h1>
           <div className="space-y-6">
             {Choose.map((section) => (
               <div key={section.title} className="space-y-2">

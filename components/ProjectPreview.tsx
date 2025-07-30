@@ -39,7 +39,7 @@ export default function Projects() {
               transition: { duration: 0.3 },
             }}
             style={{ width: "100%" }}
-            className="bg-gradient-to-bl from-white via-[#956549]/30 to-white text-black border border-[#956549] rounded-2xl lg:mx-auto lg:py-5 p-8 space-y-3 flex lg:flex-row flex-col w-full items-center justify-between"
+            className="bg-gradient-to-bl from-white via-[#956549]/30 to-white text-black border border-[#956549] rounded-2xl lg:mx-auto md:py-5 p-8 space-y-3 flex lg:flex-row flex-col w-full items-center justify-between text-center"
           >
             <Image
               src={data.image}
@@ -48,9 +48,9 @@ export default function Projects() {
               height={1800}
               className="object-contain h-64 w-96"
             />
-            <div className="lg:w-[60%] w-full space-y-3">
+            <div className="lg:w-[60%] w-full space-y-3 h-fit">
               <p className="text-xl font-bold">{data.title}</p>
-              <p className="h-28">{data.description}</p>
+              <p className="h-fit">{data.description}</p>
               <Button
                 className="bg-[#956549] w-full lg:w-44 p-6 lg:rounded-2xl rounded hover:bg-[#bb8769]"
                 onClick={() => {

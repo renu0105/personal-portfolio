@@ -44,11 +44,13 @@ const Contact = () => {
     <section className="pt-20 min-h-screen scroll-mt-28">
       <div className="flex lg:flex-row flex-col gap-16 mb-16 lg:items-center">
         <div className="space-y-7  lg:w-[26%] font-serif">
-          <h1 className="font-bold text-3xl text-[#956549]">Get in Touch</h1>
-          <p className="text-xl">
+          <h1 className="font-bold md:text-3xl text-2xl text-[#956549]">
+            Get in Touch
+          </h1>
+          <p className="md:text-xl text-lg">
             Interested in working together ? Fill out the Project inquiry form
           </p>
-          <div className="flex flex-row gap-4 items-center bg-[#956549]  p-8 rounded-2xl lg:w-full w-[50%] text-white">
+          <div className="flex flex-row gap-4 items-center bg-[#956549]  p-8 rounded-2xl lg:w-full w-full text-white">
             <Mail className="h-6 w-6" />
             <p>renuu157@gmail.com</p>
           </div>
@@ -82,50 +84,50 @@ const Contact = () => {
           </div>
         </div>
 
-        <Card className="p-10 lg:w-[70%] bg-transparent text-[#956549] ">
+        <Card className="p-10 lg:w-[70%] bg-transparent text-[#956549] border-2 shadow-2xl">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="flex flex-row w-full gap-10">
-              <div className="w-[50%]  text-xl">
+            <div className="flex lg:flex-row flex-col w-full gap-10 md:text-xl text-lg">
+              <div className="lg:w-[50%] w-full">
                 <label htmlFor="name">Name *</label>
                 <Input
                   id="name"
                   type="text"
-                  className="p-8 mt-4"
+                  className="p-8 mt-4 border-2 shadow-2xl"
                   required
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                 />
               </div>
-              <div className="w-[50%]  text-xl">
+              <div className="lg:w-[50%] w-full">
                 <label htmlFor="email">Email *</label>
                 <Input
                   id="email"
                   type="email"
-                  className="p-8 mt-4"
+                  className="p-8 mt-4 border-2 shadow-2xl"
                   required
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                 />
               </div>
             </div>
-            <div className="flex flex-row w-full gap-10">
-              <div className="w-[50%]  text-xl">
+            <div className="flex lg:flex-row flex-col w-full gap-10">
+              <div className="lg:w-[50%] w-full">
                 <label htmlFor="phone">Phone *</label>
                 <Input
                   id="phone"
                   type="text"
-                  className="p-8 mt-4"
+                  className="p-8 mt-4 border-2 shadow-2xl"
                   required
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 />
               </div>
-              <div className="w-[50%]  text-xl">
+              <div className="lg:w-[50%] w-full">
                 <label htmlFor="subject">Subject *</label>
                 <Textarea
                   id="subject"
                   cols={50}
-                  className="mt-4 p-3"
+                  className="mt-4 p-3 border-2 shadow-2xl"
                   required
                   value={form.subject}
                   onChange={(e) =>
@@ -134,13 +136,13 @@ const Contact = () => {
                 />
               </div>
             </div>
-            <label htmlFor="message" className="text-xl mb-2">
+            <label htmlFor="message" className="mb-2">
               Message *
             </label>
             <Textarea
               id="message"
               cols={90}
-              className="p-3"
+              className="p-3 mt-4 border-2 shadow-2xl"
               required
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
