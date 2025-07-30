@@ -22,7 +22,7 @@ const Services = () => {
         modern, responsive, and scalable web solutions.
       </p>
       <Carousel
-        className="w-full"
+        className="md:w-full w-[90%] mx-auto"
         plugins={[Autoplay({ delay: 3000 })]}
         opts={{ loop: true }}
       >
@@ -32,7 +32,7 @@ const Services = () => {
               key={index}
               className="snap-start shrink-0 basis-full sm:basis-1/2 lg:basis-1/3 px-2"
             >
-              <div className="bg-[#D5BFA3] border border-[#956549] p-6 space-y-4 h-full rounded-xl shadow-md mx-auto">
+              <div className="bg-[#D5BFA3] border border-[#956549] p-6 space-y-4 h-full rounded-xl shadow-md mx-auto md:w-full w-[92%]">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -53,11 +53,11 @@ const Services = () => {
         </CarouselContent>
 
         <CarouselPrevious
-          className="bg-[#D5BFA3] h-12 w-12 font-bold border border-[#956549]"
+          className="bg-[#D5BFA3] h-10 w-10 font-bold border border-[#956549] mx-2"
           aria-label="Previous slide"
         />
         <CarouselNext
-          className="bg-[#D5BFA3] h-12 w-12 font-bold border border-[#956549]"
+          className="bg-[#D5BFA3] h-10 w-10 font-bold border border-[#956549] mx-6 lg:mx-4 md:mx-2"
           aria-label="Next slide"
         />
       </Carousel>
