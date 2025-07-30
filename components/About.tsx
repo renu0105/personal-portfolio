@@ -39,13 +39,13 @@ function About() {
           </p>
           <div className="flex lg:flex-row flex-col gap-8 mt-10">
             <Button
-              className="text-white hover:border hover:border-[#956549] hover:bg-white font-bold rounded-3xl md:w-52 w-full md:p-7 p-6 hover:text-[#956549] transition-colors duration-700 hover:cursor-pointer bg-[#956549] md:text-lg text-sm "
+              className="text-white hover:border hover:border-[#956549] hover:bg-white font-bold rounded-3xl lg:w-52 w-full md:p-7 p-6 hover:text-[#956549] transition-colors duration-700 hover:cursor-pointer bg-[#956549] md:text-lg text-sm "
               onClick={handleDownload}
             >
               {cvLoading ? "Loading..." : "Download CV"}
             </Button>
             <Button
-              className="bg-white md:p-7 p-6 text-[#956549] border border-[#956549] font-bold rounded-3xl md:w-52 w-full hover:bg-[#956549] hover:text-white transition-colors duration-700 hover:cursor-pointer md:text-lg text-sm"
+              className="bg-white md:p-7 p-6 text-[#956549] border border-[#956549] font-bold rounded-3xl lg:w-52 w-full hover:bg-[#956549] hover:text-white transition-colors duration-700 hover:cursor-pointer md:text-lg text-sm"
               onClick={() => {
                 setProjectLoading(true);
                 setTimeout(() => {
